@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Reddit Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-bar">
+        <div class="logo">
+            <span class="icon">🚀</span> Forum Dev
+        </div>
+        <div class="search-container">
+            <span class="icon">🔍</span>
+            <input type="text" placeholder="Search Reddit">
+        </div>
+        <div class="user-menu">
+            <button class="create-post-btn"><span class="icon">+</span> Create</button>
+            <div class="profile-avatar">
+                <span class="icon">👤</span> My User
+            </div>
+        </div>
+    </header>
+
+    <nav class="tabs-navigation">
+        <a href="#" class="tab active"><span class="icon">🏠</span> Home</a>
+        <a href="#" class="tab"><span class="icon">🔥</span> Popular</a>
+        <a href="#" class="tab"><span class="icon">🌍</span> All</a>
+        <a href="#" class="tab"><span class="icon">🏘️</span> r/MyCommunity</a>
+        <a href="#" class="tab"><span class="icon">✉️</span> Messages</a>
+        <a href="#" class="tab"><span class="icon">⚙️</span> Settings</a>
+    </nav>
+
+    <div class="main-layout">
+        
+        <main class="post-feed">
+            <h3 class="feed-title">Home Feed</h3>
+
+            <article class="post-card">
+                <div class="voting-panel">
+                    <span class="icon upvote">⬆️</span>
+                    <span class="score">4.2k</span>
+                    <span class="icon downvote">⬇️</span>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        <span class="subreddit-link">r/NaturePhotos</span> posted by u/AmazingUser • 3 hours ago
+                    </div>
+                    <h2 class="post-title">First Snowfall on the Mountains!</h2>
+                    
+                    <div class="media-placeholder image-content">
+                        <img src="https://picsum.photos/600/350?random=1" alt="Mountain with first snowfall" style="max-width: 100%; height: auto; display: block; border-radius: 4px;">
+                    </div>
+
+                    <div class="post-actions">
+                        <button class="action-btn"><span class="icon">💬</span> 288 Comments</button>
+                        <button class="action-btn"><span class="icon">↗️</span> Share</button>
+                        <button class="action-btn"><span class="icon">🔖</span> Save</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="voting-panel">
+                    <span class="icon upvote">⬆️</span>
+                    <span class="score">98</span>
+                    <span class="icon downvote">⬇️</span>
+                </div>
+                <div class="post-content">
+                    <div class="post-info">
+                        <span class="subreddit-link">r/AskAnything</span> posted by u/CuriousCoder • 1 day ago
+                    </div>
+                    <h2 class="post-title">What is your favorite simple web design trick?</h2>
+                    
+                    <p class="text-snippet">Mine is using a subtle box-shadow on main containers to give them depth, especially on a light background. It really makes the elements pop without being distracting.</p>
+                    
+                    <div class="post-actions">
+                        <button class="action-btn"><span class="icon">💬</span> 45 Comments</button>
+                        <button class="action-btn"><span class="icon">↗️</span> Share</button>
+                        <button class="action-btn"><span class="icon">🔖</span> Save</button>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="widget community-rules">
+                <h3><span class="icon">📜</span> Community Rules</h3>
+                <ul>
+                    <li>Be Civil and Respectful</li>
+                    <li>No Spam or Self-Promotion</li>
+                    <li>Follow the Content Guidelines</li>
+                </ul>
+            </div>
+            
+            <div class="widget trending-today">
+                <h3><span class="icon">📈</span> Trending Communities</h3>
+                <p>r/webdev</p>
+                <p>r/design</p>
+                <p>r/learnprogramming</p>
+            </div>
+
+            <div class="widget recent-activity">
+                <h3><span class="icon">⏱️</span> Recent Activity</h3>
+                <ul>
+                    <li>You commented on "Best CSS tips"</li>
+                    <li>u/AnotherUser replied to your post</li>
+                    <li>New post in r/frontend</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

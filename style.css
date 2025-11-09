@@ -1,0 +1,299 @@
+/* --- 1. GLOBAL RESET AND TYPOGRAPHY --- */
+:root {
+    --primary-color: #ff4500; /* Reddit Orange */
+    --background-color: #dae0e6; /* Light Gray Background */
+    --card-color: #ffffff; /* White Card Background */
+    --text-color: #1a1a1b;
+    --secondary-text-color: #787c7e;
+    --border-color: #ccc;
+    --link-color: #0079d3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+.icon {
+    margin-right: 5px;
+}
+
+/* --- 2. HEADER BAR --- */
+.header-bar {
+    background-color: var(--card-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.search-container {
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    padding: 8px 10px;
+    background-color: #f6f7f8;
+    border: 1px solid #edeff1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    width: 100%;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+}
+
+.create-post-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 999px; /* Pill shape */
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.profile-avatar {
+    border: 1px solid var(--border-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* --- 3. TABBED NAVIGATION --- */
+.tabs-navigation {
+    background-color: var(--card-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 20px;
+    display: flex;
+    /* Center the tabs area slightly within the page container */
+    max-width: 1200px; 
+    margin: 0 auto;
+    overflow-x: auto; /* Enable horizontal scrolling if tabs exceed width */
+    white-space: nowrap; /* Prevent tabs from wrapping */
+}
+
+.tab {
+    padding: 10px 15px;
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-size: 0.95em;
+    border-bottom: 3px solid transparent; /* Placeholder for active state */
+    transition: all 0.2s ease;
+    flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.tab:hover {
+    color: var(--text-color);
+}
+
+.tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- 4. MAIN LAYOUT AND COLUMNS --- */
+.main-layout {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post-feed {
+    flex-basis: 70%; /* Main column width */
+    max-width: 700px;
+    margin-right: 20px;
+}
+
+.sidebar {
+    flex-basis: 30%; /* Sidebar width */
+    max-width: 300px;
+}
+
+/* --- 5. POST CARD STYLING --- */
+.feed-title {
+    color: var(--secondary-text-color);
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.post-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: flex;
+    overflow: hidden;
+}
+
+.voting-panel {
+    background-color: #f8f9fa;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.9em;
+    color: var(--secondary-text-color);
+}
+
+.voting-panel .icon {
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.upvote:hover { color: var(--primary-color); }
+.downvote:hover { color: #0079d3; }
+
+.score {
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+.post-content {
+    padding: 10px 15px;
+    flex-grow: 1;
+}
+
+.post-info {
+    font-size: 0.8em;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+}
+
+.subreddit-link {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.post-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+/* Image Placeholder (now for actual images) Styling */
+.media-placeholder {
+    margin: 10px 0;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Ensure image doesn't overflow rounded corners */
+}
+
+.image-content {
+    height: auto; /* Adjust height based on image content */
+    max-height: 400px; /* Optional: cap max height */
+    /* Removed border: 1px dashed var(--border-color); since it now holds a real image */
+}
+
+/* Post Actions Bar */
+.post-actions {
+    display: flex;
+    margin-top: 10px;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-text-color);
+    font-size: 0.9em;
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.action-btn:hover {
+    color: var(--text-color);
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+/* --- 6. SIDEBAR STYLING --- */
+.widget {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.widget h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget li {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: var(--secondary-text-color);
+}
+
+.trending-today p {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.recent-activity ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-activity li {
+    background-color: #f8f9fa;
+    border-left: 3px solid var(--primary-color);
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 0 4px 4px 0; /* Rounded only on the right */
+    font-size: 0.9em;
+    color: var(--text-color);
+}
